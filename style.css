@@ -7,7 +7,7 @@
     .container {
         width: 100%;
         min-height: 100vh;
-        background: linear-gradient(135deg, #c2e0ff, #ffb3d6);
+        background: linear-gradient(135deg, #F7C8D3, #BAD1EC);
         padding: 10px;
     }
     
@@ -112,4 +112,99 @@
     #listContainer li span:hover {
         background: #ccc;
         color: #fff;
+    }
+
+    /* Untuk tugas yang selesai */
+    ul li.checked {
+    color: #888;
+    text-decoration: line-through;
+    }
+
+    /* Tombol hapus di kanan baris */
+    ul li {
+        position: relative;
+        list-style: none;
+        padding: 10px 40px 10px 12px;
+        cursor: pointer;
+    }
+
+    ul li span {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+        font-size: 18px;
+        color: #555;
+        text-align: center;
+        line-height: 24px;
+        border-radius: 50%;
+    }
+
+    ul li span:hover {
+        background: #e0e0e0;
+        color: #ff4d4d;
+    }
+
+    /* 1. Container Utama Statistik */
+    .stats {
+        display: flex;                    /* Membuat susunan horizontal */
+        justify-content: space-around;    /* Meratakan kartu dengan ruang antar */
+        gap: 15px;                        /* Jarak antar kartu */
+        margin-top: 25px;                 /* Beri jarak dari list tugas */
+        padding-top: 20px;
+        border-top: 1px solid #eee;     /* Garis pembatas tipis */
+        width: 100%;
+    }
+
+    /* 2. Style Kartu Statistik Individual */
+    .stats p {
+        flex: 1;                          /* Setiap kartu mengambil ruang yang sama */
+        display: flex;
+        flex-direction: column;           /* Teks dan angka disusun vertikal */
+        align-items: center;              /* Pusatkan konten */
+        background: #f8f9fa;            /* Warna latar kartu */
+        padding: 15px;
+        border-radius: 10px;              /* Sudut membulat */
+        border: 1px solid #e9ecef;      /* Border tipis */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.03); /* Bayangan sangat tipis */
+        transition: transform 0.2s ease, box-shadow 0.2s ease; /* Efek hover */
+    }
+
+    /* 3. Efek Hover untuk Kartu */
+    .stats p:hover {
+        transform: translateY(-3px);    /* Kartu sedikit naik */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Bayangan lebih jelas */
+        cursor: default;
+    }
+
+    /* 4. Style untuk Angka (dalam span) */
+    .stats span {
+        font-size: 24px;                /* Ukuran angka lebih besar */
+        font-weight: 700;
+        margin-bottom: 5px;             /* Jarak dari label teks */
+        color: #495057;
+    }
+
+    /* 5. Style untuk Label Teks */
+    .stats p strong {
+        font-size: 12px;
+        color: #6c757d;
+        text-transform: uppercase;       /* Label teks jadi kapital */
+        letter-spacing: 0.5px;
+        margin-top: auto;                /* Pastikan label selalu di bawah */
+    }
+
+    /* 6. Warna Spesifik untuk Angka */
+    #totalCount {
+        color: #8338ec;               /* Warna ungu seperti tombol Anda */
+    }
+
+    #doneCount {
+        color: #2ec4b6;               /* Warna toska untuk 'Selesai' */
+    }
+
+    #pendingCount {
+        color: #ff9f43;               /* Warna oranye untuk 'Belum Selesai' */
     }
